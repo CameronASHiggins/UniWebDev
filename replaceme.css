@@ -7,16 +7,44 @@ This means the default styles are for the smallest mobile size.
 */
 
 /* Multi-line rulesets must use whitespace for indentation consistently. */
+html {
+		background-color: #D9D6C8;
+}
+
+div {
+		padding: 20px,20px,20px,20px;
+}
+
+#menuHandler {
+	position: fixed;
+	right: 0;
+	font-size: 30px;
+	font-weight: bolder;
+}
+
+nav {
+	display: flex;
+	font-size: 40px;
+}
+
+nav.closed {
+	display: none;
+}
+
+a {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
 body {
 	/* note the indentation here */
-	background-color: #5bf;
 	color: #024;
 }
 
 /* One-liners are fine for very simple rulesets. */
 h1 { font-family: sans-serif;}
 
-/* 
+/*
 You will probably need at least two media queries to handle larger screens.
 Your queries should be configured to work with your content
 */
