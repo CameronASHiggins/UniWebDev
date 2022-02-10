@@ -8,6 +8,10 @@
 // Your code should be DRY, if you have repeated code, consider refactoring as a function with arguments for example.
 // We like to see what you can do. Be creative.
 
+menuHandler.addEventListener('click', ev => {
+  menu.classList.toggle('closed');
+})
+
 function ArrowHit() {
   let audio = document.getElementById("arrowAudio");
   audio.play();
