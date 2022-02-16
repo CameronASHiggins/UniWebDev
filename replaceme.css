@@ -20,15 +20,15 @@ div {
 	background-color: #333;
 	overflow: hidden;
 	text-align: center;
-	max-height: 75px;
 }
 
 nav{
-	display: block;
-	font-size: 40px;
+	display: flex;
+	justify-content: center;
+	font-size: 2em;
 	font-family: sans-serif;
-	flex-direction: row;
-	max-height: 75px;
+	flex-direction: column;
+
 	text-align: center;
 
 }
@@ -42,13 +42,12 @@ a {
 }
 
 .navbar a {
-	float: left;
 	color: #f2f2f2;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 3vw;
 	white-space: nowrap;
+	transition: 0.3s;
 }
 
 .navbar a:hover {
@@ -65,10 +64,9 @@ a {
 	position: fixed;
 	right: 0;
 	padding: 3px 3px 3px 3px;
-	font-size: 60px;
+	font-size: 2em;
 	font-weight: bolder;
 	background-color: #D9D6C8;
-	max-height: 75px;
 }
 
 #menuHandler:hover {
