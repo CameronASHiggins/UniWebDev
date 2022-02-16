@@ -12,10 +12,6 @@ html {
 		min-width: 350px;
 }
 
-div {
-		padding: 20px,20px,20px,20px;
-}
-
 .menu {
 	background-color: #333;
 	overflow: hidden;
@@ -28,9 +24,7 @@ nav{
 	font-size: 2em;
 	font-family: sans-serif;
 	flex-direction: column;
-
 	text-align: center;
-
 }
 
 nav.closed {
@@ -86,7 +80,7 @@ h1 { font-family: sans-serif;}
 You will probably need at least two media queries to handle larger screens.
 Your queries should be configured to work with your content
 */
-@media screen and (min-width: 457px) {
+@media screen and (min-width: 321px) {
 	/* Code inside media queries should be indented one step further. */
 	body { font-size: 1.2em }
 }
