@@ -84,6 +84,12 @@ Your queries should be configured to work with your content
 	/* Code inside media queries should be indented one step further. */
 	body { font-size: 1.2em }
 }
+
+@media screen and (min-width: 870px) {
+	nav{
+		flex-direction: row;
+	}
+}
 /*
 We don't want to see a min-width of 457px in your code
 This was chosen to match the template content.
