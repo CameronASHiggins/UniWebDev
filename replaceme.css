@@ -97,7 +97,13 @@ body {
 }
 
 header img {
-	width: 100vw;
+	margin-top: 1em;
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+	width: 90vw;
+	border-radius: 25%;
+	background-color: inherit;
 }
 
 main {
