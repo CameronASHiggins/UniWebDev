@@ -104,6 +104,7 @@ header img {
 	width: 90vw;
 	border-radius: 25%;
 	background-color: inherit;
+	filter: drop-shadow(0 0 0.75rem);
 }
 
 main {
