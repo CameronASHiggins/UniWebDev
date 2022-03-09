@@ -13,13 +13,13 @@ html {
 }
 
 .menu {
-	background-color: #333;
+	background-color: black;
 	overflow: hidden;
 	text-align: center;
 }
 
 nav{
-	display: flex;
+	display: none;
 	justify-content: center;
 	font-size: 2em;
 	font-family: sans-serif;
@@ -28,7 +28,7 @@ nav{
 }
 
 nav.closed {
-	display: none;
+	display: flex;
 }
 
 a {
@@ -112,10 +112,6 @@ header img {
 	filter: drop-shadow(0 0 0.75rem);
 }
 
-main {
-
-}
-
 /* One-liners are fine for very simple rulesets. */
 h1, h2, h3, h4 {
 	font-family: sans-serif;
@@ -129,7 +125,6 @@ h1, h2, h3, h4 {
 	background-repeat: no-repeat;
 	background-position: center;
 	overflow: auto;
-
 }
 
 .ArcheryTitle h1 {
@@ -138,6 +133,24 @@ h1, h2, h3, h4 {
 	background-color: lightgrey;
 	max-width: 10ch;
 	min-width: 10%;
+}
+
+.article {
+	display:grid;
+	grid-template-columns: auto auto auto auto auto;
+	position: relative;
+}
+
+.articleText{
+	grid-column: 1 / span 2;
+	grid-row: 1 / span 2;
+}
+
+.articleImage img {
+	grid-column: 2 / span 3;
+	grid-row: 2 / span 3;
+	width: 90vw;
+	height: 90vh;
 }
 
 .hobby {
@@ -199,7 +212,11 @@ Your queries should be configured to work with your content
 }
 
 @media screen and (min-width: 870px) {
+	#menuHandler {
+		display: none;
+	}
 	nav {
+		display: flex;
 		flex-direction: row;
 	}
 
