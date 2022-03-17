@@ -18,5 +18,3 @@ function ArrowHit() {
 }
 
 ArrowSoundButton.addEventListener('click', ArrowHit);
-
-console.log("Obviously, you should replace this with some event handlers.");
