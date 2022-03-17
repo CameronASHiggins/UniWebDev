@@ -128,7 +128,7 @@ h1, h2, h3, h4 {
 	border-radius: 0 0 50px 50px;
 }
 
-.ArcheryTitle h1 {
+.ArcheryTitle h1, .headerSec h1 {
 	display: block;
 	padding: 0.5em;
 	margin: 1em;
@@ -140,25 +140,28 @@ h1, h2, h3, h4 {
 
 .article {
 	display:grid;
-	grid-template-columns: repeat(9, 1fr);
+	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: repeat(5,5em);
 	position: relative;
-	margin: 2em;
+	margin: 5em;
 }
 
 .articleText, .articleTextALT {
-	grid-row: 1;
-  grid-column: 1/span 8;
-  padding-top: 5%;
+	grid-row: 1/span 3;
+  grid-column: 1/span 4;
   z-index: 1;
   background-color: rgba(255, 255, 255, 0.75);
   height: fit-content;
 	border-radius: 20px;
 }
+.articleText p, .articleTextALT p{
+	padding: 0.5em;
+}
 
 .articleImage, .articleImageALT {
-	grid-column: 5/-1;
-  grid-row: 3/-1;
+	grid-column: 2/-1;
+	grid-column-end: 7;
+  grid-row: 2/-1;
 	overflow: hidden;
 }
 
@@ -176,12 +179,45 @@ h1, h2, h3, h4 {
 	grid-column: 1/span 9;
 }
 
+.personalAchievements {
+	margin: 1em;
+	background-color: rgba(255, 255, 255, 0.75);
+	border-radius: 20px;
+}
+
+.personalAchievements h3, .personalAchievements p {
+	padding: 0.5em;
+}
+
+.headerSec {
+	min-height: 400px;
+	background-image: url('Assets/FulldrawHeader.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	overflow: auto;
+	border-radius: 0 0 50px 50px;
+}
+
 .hobby {
+	margin: 1em;
+	background-color: rgba(255, 255, 255, 0.75);
+	border-radius: 75px 75px 25px 25px;
+}
+
+.hobby h2{
+	padding-top: 0.3em;
+}
+
+.hobbyContent {
+
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-direction: column;
 }
 
-.hobby img {
+.hobbyContent img {
 	margin: 1em;
 	border-radius: 50%;
 	width: 300px;
@@ -207,7 +243,7 @@ h1, h2, h3, h4 {
 	padding-right: 0.5em;
 }
 
-.badge-252, .badge-BUTTS{
+.badge-252, .badge-BUTTS {
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
@@ -234,6 +270,15 @@ Your queries should be configured to work with your content
 	}
 }
 
+@media screen and (min-width:725px) {
+	.articleImage, .articleImageALT {
+		grid-column: 3/-1;
+		grid-column-end: 7;
+	  grid-row: 3/-1;
+		overflow: hidden;
+	}
+}
+
 @media screen and (min-width: 760px){
 	.awards {
 		flex-direction: row;
@@ -249,16 +294,38 @@ Your queries should be configured to work with your content
 		flex-direction: row;
 	}
 
-	.hobby {
+	.hobbyContent {
 		flex-direction: row;
 	}
 
-	.ArcheryTitle h1{
+	.ArcheryTitle h1, .headerSec h1 {
 	display: none;
 	}
 }
 
+@media screen and (min-width: 1024px) {
+	.article {
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: repeat(6,5em);
+	}
+
+	.articleImage, .articleImageALT {
+		grid-column-end: 10;
+	  grid-row: 2/-1;
+	}
+}
+
 @media screen and (min-width: 1460px) {
+	.article {
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-rows: repeat(8,5em);
+	}
+
+	.articleImage, .articleImageALT {
+		grid-column-end: 10;
+	  grid-row: 2/-1;
+	}
+
 	.badge-group {
 		display: flex;
 		flex-direction: row;
