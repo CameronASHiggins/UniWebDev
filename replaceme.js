@@ -8,13 +8,41 @@
 // Your code should be DRY, if you have repeated code, consider refactoring as a function with arguments for example.
 // We like to see what you can do. Be creative.
 
+"use strict";
+
 menuHandler.addEventListener('click', ev => {
   menu.classList.toggle('closed');
 })
 
-function ArrowHit() {
-  let audio = document.getElementById("arrowAudio");
-  audio.play();
+async function loadObjects() {
+  const url = `https://archery-api.vercel.app/api/archery/articles`;
+  const response = await fetch(url);
+  return response.json();
 }
 
-ArrowSoundButton.addEventListener('click', ArrowHit);
+function buildArticleFromData(obj) {
+  const article = document.createElement("article");
+  const title = document.createElement("h2");
+  const imgLink = document.createElement("a");
+  const source = document.createElement("p");
+  title.innerHTML = `<a href = ${obj.link}> ${obj.title}</a>`;
+  imgLink.href = obj.link;
+  imgLink.innerHTML = `<img src = ${obj.img}>`;
+  source.innerHTML = `Source: ${obj.source}`;
+  article.appendChild(title);
+  article.appendChild(imgLink);
+  article.appendChild(source);
+  return article;
+}
+
+async function insertArticles() {
+  const obj = await loadObjects();
+  console.log(obj);
+
+  const articles = obj.map(buildArticleFromData);
+  articles.forEach((item) => {
+      results.appendChild(item)
+  });
+}
+
+insertArticles();

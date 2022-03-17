@@ -31,7 +31,7 @@ nav.closed {
 	display: flex;
 }
 
-a {
+nav a {
 	text-align: center;
   background:
     linear-gradient(
@@ -171,7 +171,7 @@ h1, h2, h3, h4 {
 	border-radius: 20px;
 }
 
-.personalAchievements {
+.personalAchievements, article{
 	margin: 1em;
 	background-color: rgba(255, 255, 255, 0.75);
 	border-radius: 20px;
@@ -179,6 +179,29 @@ h1, h2, h3, h4 {
 
 .personalAchievements h3, .personalAchievements p {
 	padding: 0.5em;
+}
+
+article {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 5em 15em 2.5em 2.5em;
+}
+
+article h2 {
+	grid-column: 2/3;
+}
+
+article a {
+	text-decoration: none;
+}
+
+article a, article img, article p {
+	padding: 0.5em;
+}
+
+article img {
+	width: 500px;
+	height: 300px;
 }
 
 .headerSec {
