@@ -336,7 +336,7 @@ Your queries should be configured to work with your content
 @media screen and (min-width: 1220px) {
 	.article {
 		grid-template-columns: 2.5 repeat(7, 1fr) 5em;
-		grid-template-rows: repeat(7,5em);
+		grid-template-rows: repeat(8,5em);
 	}
 
 	.articleImage, .articleImageALT {
@@ -345,6 +345,9 @@ Your queries should be configured to work with your content
 	}
 
 @media screen and (min-width: 1460px) {
+	.article {
+		grid-template-rows: repeat(10,5em);
+	}
 
 	.badge-group {
 		display: flex;
