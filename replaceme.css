@@ -146,7 +146,7 @@ h1, h2, h3, h4 {
 	margin: 5em;
 }
 
-.articleText, .articleTextALT {
+.articleText {
 	grid-row: 1/span 3;
   grid-column: 1/span 4;
   z-index: 1;
@@ -154,29 +154,21 @@ h1, h2, h3, h4 {
   height: fit-content;
 	border-radius: 20px;
 }
-.articleText p, .articleTextALT p{
+.articleText p{
 	padding: 0.5em;
 }
 
-.articleImage, .articleImageALT {
+.articleImage {
 	grid-column: 2/-1;
 	grid-column-end: 7;
   grid-row: 2/-1;
 	overflow: hidden;
 }
 
-.articleImage img, .articleImageALT img {
+.articleImage img {
 	max-width: 100%;
 	max-height: 100%;
 	border-radius: 20px;
-}
-
-.articleTextALT {
-	grid-column: 2/span 8;
-}
-
-.articleImageALT {
-	grid-column: 1/span 9;
 }
 
 .personalAchievements {
