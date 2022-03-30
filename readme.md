@@ -15,6 +15,8 @@ If anything is broken or doesn't quite work properly, you may explain what it SH
 
 You **must** include references (including links) to any external resources/videos/code examples that you have used here.
 
+I used https://css-tricks.com/css-link-hover-effects/ to learn how to create the link hover effects with gradient and edited it accordingly to fit the theme of Archery
+
 ## Things to do
 
 - Replace the content inside [index.html](index.html) with your own structured HTML.

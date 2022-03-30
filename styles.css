@@ -88,10 +88,11 @@ a:hover {
 	font-size: 3em;
 	font-weight: bolder;
 	border-radius: 25%;
+	color: gold;
 }
 
 #menuHandler:hover {
-	background-color: grey;
+	background-color: lightgrey;
 }
 
 body {
