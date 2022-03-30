@@ -14,6 +14,14 @@ menuHandler.addEventListener('click', ev => {
   menu.classList.toggle('closed');
 })
 
+//This is to title case the article names as they come fully uppercase.
+function titleCase(str) {
+  str = str.toLowerCase().split(' ').map(function(word) {
+    return (word.charAt(0).toUpperCase()+word.slice(1));
+  })
+  return str.join(' ');
+}
+
 async function loadObjects() {
   const url = `https://archery-api.vercel.app/api/archery/articles`;
   const response = await fetch(url);
@@ -21,17 +29,21 @@ async function loadObjects() {
 }
 
 function buildArticleFromData(obj) {
-  const article = document.createElement("article");
+  const article = document.createElement("article"); //Create article
+  const imgLink = document.createElement("a"); //Create an a element
+  article.appendChild(imgLink); //Add the a element to the article
+
+  const div = document.createElement("div");
   const title = document.createElement("h2");
-  const imgLink = document.createElement("a");
   const source = document.createElement("p");
-  title.innerHTML = `<a href = ${obj.link}> ${obj.title}</a>`;
+  const editedTitle = titleCase(obj.title);
+  title.innerHTML = `<a href = ${obj.link}> ${editedTitle}</a>`;
   imgLink.href = obj.link;
   imgLink.innerHTML = `<img src = ${obj.img}>`;
   source.innerHTML = `Source: ${obj.source}`;
-  article.appendChild(title);
-  article.appendChild(imgLink);
-  article.appendChild(source);
+  div.appendChild(title);
+  div.appendChild(source);
+  imgLink.appendChild(div);
   return article;
 }
 
