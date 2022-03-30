@@ -8,13 +8,53 @@
 // Your code should be DRY, if you have repeated code, consider refactoring as a function with arguments for example.
 // We like to see what you can do. Be creative.
 
+"use strict";
+
 menuHandler.addEventListener('click', ev => {
   menu.classList.toggle('closed');
 })
 
-function ArrowHit() {
-  let audio = document.getElementById("arrowAudio");
-  audio.play();
+//This is to title case the article names as they come fully uppercase.
+function titleCase(str) {
+  str = str.toLowerCase().split(' ').map(function(word) {
+    return (word.charAt(0).toUpperCase()+word.slice(1));
+  })
+  return str.join(' ');
 }
 
-ArrowSoundButton.addEventListener('click', ArrowHit);
+async function loadObjects() {
+  const url = `https://archery-api.vercel.app/api/archery/articles`;
+  const response = await fetch(url);
+  return response.json();
+}
+
+function buildArticleFromData(obj) {
+  const article = document.createElement("article"); //Create article
+  const imgLink = document.createElement("a"); //Create an a element
+  article.appendChild(imgLink); //Add the a element to the article
+
+  const div = document.createElement("div");
+  const title = document.createElement("h2");
+  const source = document.createElement("p");
+  const editedTitle = titleCase(obj.title);
+  title.innerHTML = `<a href = ${obj.link}> ${editedTitle}</a>`;
+  imgLink.href = obj.link;
+  imgLink.innerHTML = `<img src = ${obj.img}>`;
+  source.innerHTML = `Source: ${obj.source}`;
+  div.appendChild(title);
+  div.appendChild(source);
+  imgLink.appendChild(div);
+  return article;
+}
+
+async function insertArticles() {
+  const obj = await loadObjects();
+  console.log(obj);
+
+  const articles = obj.map(buildArticleFromData);
+  articles.forEach((item) => {
+      results.appendChild(item)
+  });
+}
+
+insertArticles();
