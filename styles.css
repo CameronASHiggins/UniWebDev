@@ -242,6 +242,10 @@ article div {
 	padding-top: 0.3em;
 }
 
+.hobby p {
+	margin: 1em;
+}
+
 .hobbyContent {
 	display: flex;
 	justify-content: center;

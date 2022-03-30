@@ -9,11 +9,6 @@
 // We like to see what you can do. Be creative.
 
 "use strict";
-
-menuHandler.addEventListener('click', ev => {
-  menu.classList.toggle('closed');
-})
-
 //This is to title case the article names as they come fully uppercase.
 function titleCase(str) {
   str = str.toLowerCase().split(' ').map(function(word) {
